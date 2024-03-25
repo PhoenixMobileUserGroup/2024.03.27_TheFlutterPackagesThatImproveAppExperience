@@ -69,8 +69,9 @@ class _HomePageState extends State<HomePage> {
                           imageUrl: pokemon[index].sprite ?? "",
                           placeholder: (context, url) =>
                               const CircularProgressIndicator(),
-                          errorWidget: (context, url, error) =>
-                              const Icon(FontAwesomeIcons.circleExclamation),
+                          errorWidget: (context, url, error) => const Center(
+                              child:
+                                  FaIcon(FontAwesomeIcons.circleExclamation)),
                         ),
                         title: Text(pokemon[index].name),
                         subtitle: Text("#${pokemon[index].id.toString()}"),
