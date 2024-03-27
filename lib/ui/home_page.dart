@@ -7,6 +7,7 @@ import 'package:packages_meetup_demo/ui/components/shimmer_container_widget.dart
 import 'package:packages_meetup_demo/ui/dialogs/pokemon_details_dialog.dart';
 
 import '../models/pokemon.dart';
+import 'components/shimmer_circle_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -66,9 +67,9 @@ class _HomePageState extends State<HomePage> {
                           width: 50,
                           height: 50,
                           fit: BoxFit.cover,
-                          imageUrl: pokemon[index].sprite ?? "",
+                          imageUrl: pokemon[index].sprite,
                           placeholder: (context, url) =>
-                              const CircularProgressIndicator(),
+                              const ShimmerCircle(width: 50, height: 50),
                           errorWidget: (context, url, error) => const Center(
                               child:
                                   FaIcon(FontAwesomeIcons.circleExclamation)),
